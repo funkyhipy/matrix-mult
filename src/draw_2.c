@@ -29,7 +29,7 @@ int	get_light(int start, int end, double ratio)
 	return ((int)((1 - ratio) * start + ratio * end));
 }
 
-int	get_color(t_vector *start, t_vector *end, double ratio)
+int	get_color(t_vector *color, double ratio)
 {
 	int	red;
 	int	green;
@@ -37,8 +37,8 @@ int	get_color(t_vector *start, t_vector *end, double ratio)
 	int	s;
 	int	e;
 
-	s = (int) start->coord[1];
-	e = (int) end->coord[1];
+	s = (int) color->coord[0];
+	e = (int) color->coord[1];
 	if (s == e)
 		return (s);
 	red = get_light((s >> 16) & 0xFF, (e >> 16) & 0xFF, ratio);

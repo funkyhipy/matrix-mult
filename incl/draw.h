@@ -39,13 +39,13 @@ t_vector		*get_gravity_center(t_matrix *self);
 t_vector		*get_shift_center_vector(t_matrix *self, t_camera *cam);
 
 int				get_light(int start, int end, double ratio);
-int				get_color(t_vector *start, t_vector *end, double ratio);
+int				get_color(t_vector *color, double ratio);
 
 void			draw(t_img *img, t_env *env);
 void			draw_helper(t_env *env);
 //créer un nouvel objet qui contiendrait tout?!
 void			draw_line(t_vector *s, t_vector *e,
-					t_vector *shc, t_vector *ehc, t_img *img);
+					t_vector *color, t_img *img);
 void			clear_img(t_img *self);
 
 t_line_helper	*new_line_helper(t_vector *start, t_vector *end);
