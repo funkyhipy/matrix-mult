@@ -21,12 +21,18 @@ int	handle_no_event(void *data)
 
 int	handle_keypress(int keysym, t_param *self)
 {
-	handle_exit(keysym, self);
-	handle_camera(keysym, self);
-	handle_moves(keysym, self);
-	draw(self->img, self->env);
-	mlx_put_image_to_window(self->mlx->mlx,
-		self->mlx->window, self->img->img, 0, 0);
+	int	r;
+
+	r = 0;
+	r += handle_exit(keysym, self);
+	r += handle_camera(keysym, self);
+	r += handle_moves(keysym, self);
+	if (r == 0)
+	{
+		draw(self->img, self->env);
+		mlx_put_image_to_window(self->mlx->mlx,
+			self->mlx->window, self->img->img, 0, 0);
+	}
 	printf("Keypress: %x\n", keysym);
 	return (0);
 }
@@ -81,7 +87,7 @@ int	handle_exit(int keysym, t_param *self)
 		{
 			mlx_destroy_window(self->mlx->mlx, self->mlx->window);
 			self->mlx->window = NULL;
-			return (0);
+			return (1);
 		}
 	}
 	return (0);
