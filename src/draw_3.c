@@ -61,13 +61,8 @@ t_line_helper	*new_line_helper(t_vector *start, t_vector *end)
 	return (self);
 }
 
-void	draw(t_img *img, t_env *env)
+void	draw_helper(t_env *env)
 {
-	size_t		i;
-	size_t		j;
-	t_vector	***proj;
-	t_vector	***map;
-
 	if (env->proj)
 		free_matrix(env->proj, free_elem);
 	if (env->camera->shift_center)
@@ -75,6 +70,16 @@ void	draw(t_img *img, t_env *env)
 	env->camera->shift_center = get_shift_center_vector
 		(env->world, env->camera);
 	env->proj = projected_matrix(env->world, env->camera);
+}
+
+void	draw(t_img *img, t_env *env)
+{
+	size_t		i;
+	size_t		j;
+	t_vector	***proj;
+	t_vector	***map;
+
+	draw_helper(env);
 	proj = (t_vector ***)env->proj->m;
 	map = (t_vector ***)env->map->m;
 	clear_img(img);

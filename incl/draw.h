@@ -42,6 +42,7 @@ int				get_light(int start, int end, double ratio);
 int				get_color(t_vector *start, t_vector *end, double ratio);
 
 void			draw(t_img *img, t_env *env);
+void			draw_helper(t_env *env);
 //créer un nouvel objet qui contiendrait tout?!
 void			draw_line(t_vector *s, t_vector *e,
 					t_vector *shc, t_vector *ehc, t_img *img);
