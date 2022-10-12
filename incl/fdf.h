@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   fdf.h                                              :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmontaur <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/14 22:29:13 by gmontaur          #+#    #+#             */
+/*   Updated: 2021/07/14 22:29:15 by gmontaur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef FDF_H
 # define FDF_H
 # include <mlx.h>
@@ -14,16 +26,16 @@
 # define HEIGHT			1000
 # define WIDTH			2000
 
-typedef struct	s_point
+typedef struct s_point
 {
 	t_vector	*vect;
 	int			color;
 }	t_point;
 
-typedef struct	s_line
+typedef struct s_line
 {
-	t_point *A;
-	t_point *B;
+	t_point	*A;
+	t_point	*B;
 }	t_line;
 
 typedef struct s_img
@@ -37,7 +49,7 @@ typedef struct s_img
 
 typedef struct s_mlx
 {
-	void 	*mlx;
+	void	*mlx;
 	void	*window;
 }	t_mlx;
 
@@ -48,20 +60,19 @@ typedef struct s_env
 	t_matrix	*proj;
 	size_t		cols;
 	size_t		lines;
-	t_camera 	*camera;
+	t_camera	*camera;
 }	t_env;
 
 typedef struct s_param
 {
-	t_mlx 	*mlx;
-	t_img 	*img;
+	t_mlx	*mlx;
+	t_img	*img;
 	t_env	*env;
 	t_hmap	*hmap;
 }	t_param;
 
-
-int	handle_no_event(void *data);
-int	handle_keypress(int keysym, t_param *self);
+int			handle_no_event(void *data);
+int			handle_keypress(int keysym, t_param *self);
 
 //hmap_to_matrix.c
 t_matrix	*hmap_to_world_matrix(t_hmap *self);
@@ -74,8 +85,8 @@ t_param		*init_params(const char *path);
 void		free_params(t_param *self);
 
 //read_file.c
-t_hmap_dim		*get_dimensions(const char *fdf_filename);
-t_hmap 			*read_map(const char *fdf_filename);
-void			print_data(t_hmap *data);
+t_hmap_dim	*get_dimensions(const char *fdf_filename);
+t_hmap		*read_map(const char *fdf_filename);
+void		print_data(t_hmap *data);
 
 #endif //FDF_FDF_H
