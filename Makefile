@@ -65,8 +65,8 @@ SOURCES_LIST = \
 	matrix_1.c \
 	matrix_2.c \
 	matrix_3.c \
-	project._1.c \
-	project._2.c \
+	project_1.c \
+	project_2.c \
 	read_file_1.c \
 	read_file_2.c \
 	vector_1.c \
