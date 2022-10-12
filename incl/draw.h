@@ -53,4 +53,4 @@ void			put_pixel(t_img *img, int x, int y, int color);
 void			draw_points(t_img *img, t_matrix *matrix, t_hmap *map);
 void			print_vect(t_vector *e);
 
-#endif DRAW_H
+#endif //DRAW_H

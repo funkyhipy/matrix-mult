@@ -13,12 +13,13 @@
 
 void	draw_line(t_vector *s, t_vector *e, t_vector *shc, t_vector *ehc, t_img *img)
 {
-	t_line_helper *c;
+	t_line_helper	*c;
 
 	c = new_line_helper(s, e);
 	while (true)
 	{
-		put_pixel(img, c->xi, c->yi, get_color(shc, ehc, (c->i/(double)c->n)));
+		put_pixel(img, c->xi, c->yi,
+			get_color(shc, ehc, (c->i / (double)c->n)));
 		if ((c->xi == (int)e->coord[0]) && (c->yi == (int)e->coord[1]))
 			break ;
 		c->e_xy = 2 * c->err;
@@ -31,7 +32,7 @@ void	draw_line(t_vector *s, t_vector *e, t_vector *shc, t_vector *ehc, t_img *im
 		{
 			c->err += c->dx;
 			c->yi += c->sy;
-		} // e_xy+e_y < 0
+		}
 		++(c->i);
 	}
 }
@@ -72,7 +73,7 @@ void	draw(t_img *img, t_env *env)
 	if (env->camera->shift_center)
 		free_vect(env->camera->shift_center);
 	env->camera->shift_center = get_shift_center_vector
-			(env->world, env->camera);
+		(env->world, env->camera);
 	env->proj = projected_matrix(env->world, env->camera);
 	proj = (t_vector ***)env->proj->m;
 	map = (t_vector ***)env->map->m;

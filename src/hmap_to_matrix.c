@@ -83,6 +83,5 @@ t_env	*init_env(t_hmap *hmap)
 	self->camera = init_camera();
 	self->camera->shift_center = get_shift_center_vector
 		(self->world, self->camera);
-	//self->proj = projected_matrix(self->world, self->camera);
 	return (self);
 }

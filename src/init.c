@@ -44,7 +44,7 @@ t_param	*init_params(const char *path)
 	return (param);
 }
 
-t_camera *init_camera()
+t_camera	*init_camera(void)
 {
 	t_camera	*camera;
 

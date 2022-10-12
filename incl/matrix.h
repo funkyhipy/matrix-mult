@@ -13,6 +13,7 @@
 # define MATRIX_H
 # include <stdio.h>
 # include <stdlib.h>
+# include "vector.h"
 
 //this implementation works for matrices of int
 typedef struct s_matrix
@@ -49,5 +50,6 @@ void		free_elem(void *self);
  * Helper
  */
 void		print_matrix(t_matrix *self);
+void		print_line(t_matrix *self, int j);
 
 #endif //MATRIX_H

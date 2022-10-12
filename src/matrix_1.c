@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   matrix_1.c                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: gmontaur <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/07/14 22:29:13 by gmontaur          #+#    #+#             */
+/*   Updated: 2021/07/14 22:29:15 by gmontaur         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "matrix.h"
 #include "vector.h"
 
@@ -9,11 +20,11 @@ t_matrix	*new_matrix(size_t rows, size_t cols)
 	self = calloc(1, sizeof (t_matrix));
 	if (!self)
 		return (NULL);
-	self->m = calloc(cols, sizeof (void*));
+	self->m = calloc(cols, sizeof (void *));
 	j = 0;
 	while (j < cols)
 	{
-		self->m[j] = calloc(rows, sizeof (void*));
+		self->m[j] = calloc(rows, sizeof (void *));
 		if (!self->m[j])
 		{
 			while (j-- > 0)
@@ -52,7 +63,7 @@ t_matrix	*cpy_matrix(t_matrix *other)
 	return (self);
 }
 
-void 		set_matrix_elem(t_matrix *self, void *elem, size_t x, size_t y)
+void	set_matrix_elem(t_matrix *self, void *elem, size_t x, size_t y)
 {
 	if (self && self->m)
 	{
@@ -61,7 +72,7 @@ void 		set_matrix_elem(t_matrix *self, void *elem, size_t x, size_t y)
 	}
 }
 
-void 		free_matrix(t_matrix *self, void (*f)(void*))
+void	free_matrix(t_matrix *self, void (*f)(void*))
 {
 	size_t	j;
 	size_t	i;
