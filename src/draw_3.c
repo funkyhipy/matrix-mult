@@ -21,7 +21,10 @@ void	draw_line(t_vector *s, t_vector *e, t_vector *color, t_img *img)
 		put_pixel(img, c->xi, c->yi,
 			get_color(color, (c->i / (double)c->n)));
 		if ((c->xi == (int)e->coord[0]) && (c->yi == (int)e->coord[1]))
+		{
+			free(c);
 			break ;
+		}
 		c->e_xy = 2 * c->err;
 		if (c->e_xy >= c->dy)
 		{
@@ -66,51 +69,30 @@ void	draw_helper(t_env *env)
 	if (env->proj)
 		free_matrix(env->proj, free_elem);
 	if (env->camera->shift_center)
+	{
 		free_vect(env->camera->shift_center);
+		env->camera->shift_center = NULL;
+	}
 	env->camera->shift_center = get_shift_center_vector
 		(env->world, env->camera);
 	env->proj = projected_matrix(env->world, env->camera);
 }
 
-void	draw(t_img *img, t_env *env)
-{
-	size_t		i;
-	size_t		j;
-	t_vector	***proj;
-	t_vector	***map;
-	t_vector	*color;
-
-	draw_helper(env);
-	proj = (t_vector ***)env->proj->m;
-	map = (t_vector ***)env->map->m;
-	clear_img(img);
-	color = new_2vect(0, 0);
-	j = 0;
-	while (j < env->lines)
-	{
-		i = 0;
-		while (i < env->cols)
-		{
-			if (i < env->cols - 1)
-			{
-				color->coord[0] = map[j][i]->coord[1];
-				color->coord[1] = map[j][i + 1]->coord[1];
-				draw_line(proj[j][i], proj[j][i + 1], color, img);
-			}
-			if (j < env->lines - 1)
-			{
-				color->coord[0] = map[j][i]->coord[1];
-				color->coord[1] = map[j + 1][i]->coord[1];
-				draw_line(proj[j][i], proj[j + 1][i], color, img);
-			}
-			++i;
-		}
-		++j;
-	}
-	free_vect(color);
-}
-
 void	clear_img(t_img *self)
 {
 	ft_bzero(self->addr, WIDTH * HEIGHT * (self->bpp / 8));
+}
+
+void	draw2(int n, t_vector *color, t_vector ***map, long i[2])
+{
+	if (n == 0)
+	{
+		color->coord[0] = map[i[0]][i[1]]->coord[1];
+		color->coord[1] = map[i[0]][i[1] + 1]->coord[1];
+	}
+	if (n == 1)
+	{
+		color->coord[0] = map[i[0]][i[1]]->coord[1];
+		color->coord[1] = map[i[0] + 1][i[1]]->coord[1];
+	}
 }

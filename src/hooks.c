@@ -85,6 +85,7 @@ int	handle_exit(int keysym, t_param *self)
 	{
 		if (self->mlx->mlx && self->mlx->window)
 		{
+			mlx_destroy_image(self->mlx->mlx, self->img->img);
 			mlx_destroy_window(self->mlx->mlx, self->mlx->window);
 			self->mlx->window = NULL;
 			return (1);

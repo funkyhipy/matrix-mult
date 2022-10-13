@@ -43,7 +43,8 @@ int				get_color(t_vector *color, double ratio);
 
 void			draw(t_img *img, t_env *env);
 void			draw_helper(t_env *env);
-//créer un nouvel objet qui contiendrait tout?!
+void			draw2(int n, t_vector *color, t_vector ***map, long i[2]);
+
 void			draw_line(t_vector *s, t_vector *e,
 					t_vector *color, t_img *img);
 void			clear_img(t_img *self);

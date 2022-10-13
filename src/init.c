@@ -72,4 +72,9 @@ void	free_params(t_param *self)
 	free_matrix(self->env->map, free_elem);
 	free_matrix(self->env->world, free_elem);
 	free_matrix(self->env->proj, free_elem);
+	free_vect(self->env->camera->rota);
+	free_vect(self->env->camera->shift);
+	free_vect(self->env->camera->shift_center);
+	free(self->env);
+	free(self);
 }

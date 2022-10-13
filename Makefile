@@ -14,7 +14,7 @@
 NAME = fdf
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra -pedantic
+FLAGS = -Wall -Werror -Wextra -pedantic -fsanitize=address -g
 
 ##################################################################
 #LIBRARIES PART OF MAKEFILE
@@ -57,6 +57,7 @@ SOURCES_LIST = \
 	draw_1.c \
 	draw_2.c \
 	draw_3.c \
+	draw_4.c \
 	hmap.c \
 	hmap_to_matrix.c \
 	hooks.c \

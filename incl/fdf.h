@@ -85,6 +85,7 @@ t_env		*init_env(t_hmap *hmap);
 //init.c
 t_img		*init_window(t_mlx *env);
 t_param		*init_params(const char *path);
+t_camera	*init_camera(void);
 void		free_params(t_param *self);
 
 //read_file.c

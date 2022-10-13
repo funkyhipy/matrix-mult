@@ -20,7 +20,7 @@ add_executable(matrix_mult
         src/read_file_1.c
         src/read_file_2.c
         src/vector_1.c
-        src/vector_2.c)
+        src/vector_2.c src/draw_4.c)
 
 target_include_directories(matrix_mult PRIVATE incl)
 target_include_directories(matrix_mult PRIVATE libft/incl)
