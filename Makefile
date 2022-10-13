@@ -14,7 +14,7 @@
 NAME = fdf
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra -pedantic #-fsanitize=address -g
+FLAGS = -Wall -Werror -Wextra -pedantic -fsanitize=address -g
 
 ##################################################################
 #LIBRARIES PART OF MAKEFILE

@@ -65,7 +65,7 @@ static void	read_file_helper_elems(t_hmap *m, char *line)
 	int			height;
 
 	elems = ft_split(line, ' ');
-	while (*(elems + m->counter->width))
+	while (m->counter->width < m->width && *(elems + m->counter->width))
 	{
 		color = NULL;
 		height = ft_atoi(*(elems + m->counter->width));

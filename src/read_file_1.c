@@ -34,6 +34,8 @@ static size_t	get_dimensions_width(int fd, char **line)
 	counter = 0;
 	valid = true;
 	*line = get_next_line(fd);
+	if (*line == NULL)
+		return (0);
 	iter = *line;
 	while (*iter)
 	{
