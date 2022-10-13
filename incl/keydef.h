@@ -12,7 +12,7 @@
 
 #ifndef KEYDEF_H
 # define KEYDEF_H
-/*
+
 # define KEY_PRESS 2
 # define KEYPRESSMASK 0
 
@@ -24,8 +24,9 @@
 # define XK_KP_ADD 69
 # define XK_KP_SUBTRACT 78
 # define XK_ESCAPE 53
-*/
 
+/*
+ * LINUX
 # define KEY_PRESS 02
 # define KEYPRESSMASK (1L<<0)
 
@@ -41,5 +42,5 @@
 # define XK_KP_ADD 65451
 # define XK_KP_SUBTRACT 65453
 # define XK_ESCAPE 65307
-
+*/
 #endif //KEYDEF_H
