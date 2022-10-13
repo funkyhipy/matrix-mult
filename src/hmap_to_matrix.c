@@ -52,7 +52,7 @@ t_matrix	*hmap_to_map_matrix(t_hmap *self)
 		{
 			elem = new_2vect((double)(self->z_matrix[j][i]),
 					(double)(self->c_matrix[j][i]));
-			if (elem->coord[1] == -1)
+			if (elem->coord[1] == -1.0)
 				elem->coord[1] = (double)get_color_height
 					(self->z_matrix[j][i], self);
 			set_matrix_elem(res, elem, i, j);
@@ -66,9 +66,11 @@ t_matrix	*hmap_to_map_matrix(t_hmap *self)
 int	get_color_height(int height, t_hmap *ref)
 {
 	double	ratio;
+	int		color;
 
 	ratio = (double)(height - ref->min_h) / (ref->max_h - ref->min_h);
-	return (get_light(MIN_COLOR, MAX_COLOR, ratio));
+	color = get_light(MIN_COLOR, MAX_COLOR, ratio);
+	return (color);
 }
 
 t_env	*init_env(t_hmap *hmap)

@@ -43,7 +43,7 @@ t_hmap	*new_hmap(t_hmap_dim *dimensions)
 	t_hmap	*self;
 	t_hmap	*tmp;
 
-	self = malloc(sizeof (t_hmap));
+	self = ft_calloc(1, sizeof (t_hmap));
 	if (!self)
 	{
 		free(dimensions);

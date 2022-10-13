@@ -62,7 +62,7 @@ t_camera	*init_camera(void)
 	}
 	camera->shift_center = NULL;
 	camera->projection = ORTHOGONAL;
-	camera->zoom = 1;
+	camera->zoom = 10;
 	return (camera);
 }
 

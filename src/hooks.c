@@ -82,25 +82,7 @@ int	handle_exit(int keysym, t_param *self)
 {
 	if (keysym == XK_ESCAPE)
 	{
-		if (self->mlx->mlx && self->mlx->window)
-		{
-			mlx_destroy_image(self->mlx->mlx, self->img->img);
-			mlx_destroy_window(self->mlx->mlx, self->mlx->window);
-			self->mlx->window = NULL;
-			exit(0);
-		}
-	}
-	return (0);
-}
-
-int	handle_quit(t_param *self)
-{
-	if (self->mlx->mlx && self->mlx->window)
-	{
-		mlx_destroy_image(self->mlx->mlx, self->img->img);
-		mlx_destroy_window(self->mlx->mlx, self->mlx->window);
-		self->mlx->window = NULL;
-		exit(0);
+		handle_quit(self);
 	}
 	return (0);
 }

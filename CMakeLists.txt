@@ -10,6 +10,7 @@ add_executable(matrix_mult
         src/hmap.c
         src/hmap_to_matrix.c
         src/hooks.c
+        src/hooks_2.c
         src/init.c
         src/main.c
         src/matrix_1.c

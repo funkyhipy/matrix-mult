@@ -14,7 +14,7 @@
 NAME = fdf
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra -pedantic -fsanitize=address -g
+FLAGS = -Wall -Werror -Wextra -pedantic #-fsanitize=address -g
 
 ##################################################################
 #LIBRARIES PART OF MAKEFILE
@@ -46,6 +46,7 @@ HEADERS_LIST = \
 	draw.h \
 	fdf.h \
 	hmap.h \
+	keydef.h \
 	matrix.h \
 	vector.h
 HEADERS = $(addprefix $(HEADERS_DIRECTORY), $(HEADERS_LIST))
@@ -62,6 +63,7 @@ SOURCES_LIST = \
 	hmap.c \
 	hmap_to_matrix.c \
 	hooks.c \
+	hooks_2.c \
 	init.c \
 	main.c \
 	matrix_1.c \
