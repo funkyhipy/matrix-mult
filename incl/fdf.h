@@ -13,8 +13,9 @@
 #ifndef FDF_H
 # define FDF_H
 # include <mlx.h>
-# include <X11/keysym.h>
-# include <X11/X.h>
+//# include <X11/keysym.h>
+//# include <X11/X.h>
+# include <keydef.h>
 # include <libft.h>
 # include <ft_printf.h>
 # include <get_next_line.h>

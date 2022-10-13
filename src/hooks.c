@@ -33,7 +33,6 @@ int	handle_keypress(int keysym, t_param *self)
 		mlx_put_image_to_window(self->mlx->mlx,
 			self->mlx->window, self->img->img, 0, 0);
 	}
-	printf("Keypress: %x\n", keysym);
 	return (0);
 }
 
@@ -88,7 +87,7 @@ int	handle_exit(int keysym, t_param *self)
 			mlx_destroy_image(self->mlx->mlx, self->img->img);
 			mlx_destroy_window(self->mlx->mlx, self->mlx->window);
 			self->mlx->window = NULL;
-			return (1);
+			exit(0);
 		}
 	}
 	return (0);
