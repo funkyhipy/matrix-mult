@@ -74,6 +74,7 @@ t_vector	*get_shift_center_vector(t_matrix *self, t_camera *cam)
 	matrix_center = get_gravity_center(self);
 	proj_center = project_vect(matrix_center, cam);
 	sbstr_vect(img_center, proj_center);
+	shift_vect(img_center, cam->shift);
 	free_vect(proj_center);
 	free_vect(matrix_center);
 	return (img_center);

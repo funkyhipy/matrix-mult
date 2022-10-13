@@ -57,16 +57,21 @@ t_hmap_dim	*get_dimensions(const char *fdf_filename)
 	char		*line;
 	t_hmap_dim	*dim;
 
-	dim = ft_calloc(1, sizeof (t_hmap_dim));
-	if (!dim)
-		return (NULL);
 	fd = open(fdf_filename, O_RDONLY);
 	if (fd > 0)
 	{
+		dim = ft_calloc(1, sizeof (t_hmap_dim));
+		if (!dim)
+		{
+			close(fd);
+			return (NULL);
+		}
 		dim->width = get_dimensions_width(fd, &line);
 		dim->height = get_dimensions_height(fd, line);
 		close(fd);
 	}
+	else
+		return (NULL);
 	return (dim);
 }
 

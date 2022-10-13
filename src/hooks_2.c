@@ -11,6 +11,19 @@
 /* ************************************************************************** */
 #include <fdf.h>
 
+int	handle_move(int keysym, t_param *self)
+{
+	if (keysym == ARROW_LEFT)
+		self->env->camera->shift->coord[0] -= 10;
+	else if (keysym == ARROW_RIGHT)
+		self->env->camera->shift->coord[0] += 10;
+	else if (keysym == ARROW_UP)
+		self->env->camera->shift->coord[1] -= 10;
+	else if (keysym == ARROW_DOWN)
+		self->env->camera->shift->coord[1] += 10;
+	return (0);
+}
+
 int	handle_quit(t_param *self)
 {
 	if (self->mlx->mlx && self->mlx->window)

@@ -13,7 +13,7 @@
 
 void	draw_degeu(t_vector	**color, long *i)
 {
-	*color = new_2vect(0, 0);
+	*color = new_2vect(MIN_COLOR, MIN_COLOR);
 	i[0] = -1;
 }
 

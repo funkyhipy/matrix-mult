@@ -28,7 +28,6 @@ t_vector	*project_vect(t_vector *point, t_camera *camera)
 	}
 	rota = camera->rota;
 	rotate_vect(point, rota);
-	shift_vect(point, camera->shift);
 	proj = new_2vect(ft_round(point->coord[0]), ft_round(point->coord[1]));
 	if (camera->shift_center)
 		shift_vect(proj, camera->shift_center);

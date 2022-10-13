@@ -33,6 +33,8 @@ t_param	*init_params(const char *path)
 	t_param	*param;
 
 	map = read_map(path);
+	if (!map)
+		return (NULL);
 	env = init_env(map);
 	mlx = malloc(sizeof (t_mlx));
 	img = init_window(mlx);
@@ -54,14 +56,14 @@ t_camera	*init_camera(void)
 	camera->rota = new_3vect(0, 0, 0);
 	if (!camera->rota)
 		return (NULL);
-	camera->shift = new_3vect(0, 0, 0);
+	camera->shift = new_2vect(0, 0);
 	if (!camera->shift)
 	{
 		free_vect(camera->rota);
 		return (NULL);
 	}
 	camera->shift_center = NULL;
-	camera->projection = ORTHOGONAL;
+	camera->projection = ISOMETRIC;
 	camera->zoom = 10;
 	return (camera);
 }

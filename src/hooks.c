@@ -27,6 +27,7 @@ int	handle_keypress(int keysym, t_param *self)
 	r += handle_exit(keysym, self);
 	r += handle_camera(keysym, self);
 	r += handle_rota(keysym, self);
+	r += handle_move(keysym, self);
 	if (r == 0)
 	{
 		draw(self->img, self->env);
