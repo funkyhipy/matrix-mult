@@ -76,5 +76,8 @@ void	free_params(t_param *self)
 	free_vect(self->env->camera->shift);
 	free_vect(self->env->camera->shift_center);
 	free(self->env);
+	free(self->mlx->window);
+	free(self->mlx);
+	free(self->img);
 	free(self);
 }

@@ -32,6 +32,6 @@ int	main(int argc, char *argv[])
 		&handle_keypress, param);
 	mlx_hook(param->mlx->window, 17, 0L << 0, &handle_quit, param);
 	mlx_loop(param->mlx->mlx);
-	free_params(param);
+	//free_params(param);
 	return (0);
 }

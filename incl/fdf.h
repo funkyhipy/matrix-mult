@@ -74,7 +74,8 @@ typedef struct s_param
 
 int			handle_no_event(void *data);
 int			handle_keypress(int keysym, t_param *self);
-int			handle_moves(int keysym, t_param *self);
+int			handle_rota(int keysym, t_param *self);
+int			handle_move(int keysym, t_param *self);
 int			handle_camera(int keysym, t_param *self);
 int			handle_exit(int keysym, t_param *self);
 int			handle_quit(t_param *self);

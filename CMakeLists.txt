@@ -26,16 +26,16 @@ add_executable(matrix_mult
 
 target_include_directories(matrix_mult PRIVATE incl)
 target_include_directories(matrix_mult PRIVATE libft/incl)
-#target_include_directories(matrix_mult PRIVATE mlx_linux)
-target_include_directories(matrix_mult PRIVATE minilibx_macos)
+target_include_directories(matrix_mult PRIVATE mlx_linux)
+#target_include_directories(matrix_mult PRIVATE minilibx_macos)
 
 
 target_link_libraries(matrix_mult ${CMAKE_SOURCE_DIR}/libft/libft.a)
-#target_link_libraries(matrix_mult ${CMAKE_SOURCE_DIR}/mlx_linux/libmlx_Linux.a)
-target_link_libraries(matrix_mult ${CMAKE_SOURCE_DIR}/minilibx_macos/libmlx.a)
+target_link_libraries(matrix_mult ${CMAKE_SOURCE_DIR}/mlx_linux/libmlx_Linux.a)
+#target_link_libraries(matrix_mult ${CMAKE_SOURCE_DIR}/minilibx_macos/libmlx.a)
 
 target_link_libraries(matrix_mult m)
-#target_link_libraries(matrix_mult Xext)
-#target_link_libraries(matrix_mult X11)
+target_link_libraries(matrix_mult Xext)
+target_link_libraries(matrix_mult X11)
 target_link_libraries(matrix_mult z)
-#target_link_libraries(matrix_mult bsd)
+target_link_libraries(matrix_mult bsd)

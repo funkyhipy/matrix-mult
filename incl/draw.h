@@ -32,6 +32,7 @@ typedef struct s_line_helper
 }	t_line_helper;
 
 t_matrix		*projected_matrix(t_matrix *A, t_camera *cam);
+void			shift_matrix(t_matrix *A, t_vector *shift);
 
 t_camera		*init_camera(void);
 

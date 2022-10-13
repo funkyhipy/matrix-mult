@@ -26,7 +26,7 @@ int	handle_keypress(int keysym, t_param *self)
 	r = 0;
 	r += handle_exit(keysym, self);
 	r += handle_camera(keysym, self);
-	r += handle_moves(keysym, self);
+	r += handle_rota(keysym, self);
 	if (r == 0)
 	{
 		draw(self->img, self->env);
@@ -36,7 +36,7 @@ int	handle_keypress(int keysym, t_param *self)
 	return (0);
 }
 
-int	handle_moves(int keysym, t_param *self)
+int	handle_rota(int keysym, t_param *self)
 {
 	if (keysym == XK_KP_UP)
 	{
@@ -83,6 +83,7 @@ int	handle_exit(int keysym, t_param *self)
 	if (keysym == XK_ESCAPE)
 	{
 		handle_quit(self);
+		return (1);
 	}
 	return (0);
 }

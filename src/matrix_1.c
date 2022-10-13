@@ -17,14 +17,14 @@ t_matrix	*new_matrix(size_t rows, size_t cols)
 	t_matrix	*self;
 	size_t		j;
 
-	self = calloc(1, sizeof (t_matrix));
+	self = ft_calloc(1, sizeof (t_matrix));
 	if (!self)
 		return (NULL);
-	self->m = calloc(cols, sizeof (void *));
+	self->m = ft_calloc(cols, sizeof (void *));
 	j = 0;
 	while (j < cols)
 	{
-		self->m[j] = calloc(rows, sizeof (void *));
+		self->m[j] = ft_calloc(rows, sizeof (void *));
 		if (!self->m[j])
 		{
 			while (j-- > 0)
@@ -92,6 +92,7 @@ void	free_matrix(t_matrix *self, void (*f)(void*))
 			free(self->m[j]);
 			++j;
 		}
+		free(self->m);
 		free(self);
 	}
 }
