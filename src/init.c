@@ -61,7 +61,7 @@ t_camera	*init_camera(void)
 		return (NULL);
 	}
 	camera->shift_center = NULL;
-	camera->projection = ISOMETRIC;
+	camera->projection = ORTHOGONAL;
 	camera->zoom = 1;
 	return (camera);
 }

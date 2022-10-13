@@ -35,8 +35,8 @@ typedef struct s_point
 
 typedef struct s_line
 {
-	t_point	*A;
-	t_point	*B;
+	t_point	*a;
+	t_point	*b;
 }	t_line;
 
 typedef struct s_img
@@ -77,6 +77,7 @@ int			handle_keypress(int keysym, t_param *self);
 int			handle_moves(int keysym, t_param *self);
 int			handle_camera(int keysym, t_param *self);
 int			handle_exit(int keysym, t_param *self);
+int			handle_quit(t_param *self);
 
 //hmap_to_matrix.c
 t_matrix	*hmap_to_world_matrix(t_hmap *self);

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   hmap.h                                             :+:      :+:    :+:   */
+/*   keydef.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: gmontaur <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -11,17 +11,16 @@
 /* ************************************************************************** */
 
 #ifndef KEYDEF_H
-#define KEYDEF_H
+# define KEYDEF_H
 
-#define KeyPress 2
-#define KeyPressMask 0
-
-#define XK_KP_Up 91
-#define XK_KP_Down 84
-#define XK_KP_Left 86
-#define XK_KP_Right 88
-#define XK_c 8
-#define XK_KP_Add 69
-#define XK_KP_Subtract 78
-#define XK_Escape 53
+# define KEY_PRESS 2
+# define KEYPRESSMASK 0
+# define XK_KP_UP 91
+# define XK_KP_DOWN 84
+# define XK_KP_LEFT 86
+# define XK_KP_RIGHT 88
+# define XK_C 8
+# define XK_KP_ADD 69
+# define XK_KP_SUBTRACT 78
+# define XK_ESCAPE 53
 #endif //KEYDEF_H

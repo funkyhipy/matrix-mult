@@ -28,10 +28,10 @@ int	main(int argc, char *argv[])
 	mlx_put_image_to_window(param->mlx->mlx,
 		param->mlx->window, param->img->img, 0, 0);
 	mlx_loop_hook(param->mlx->mlx, &handle_no_event, param);
-	mlx_hook(param->mlx->window, KeyPress, KeyPressMask,
+	mlx_hook(param->mlx->window, KEY_PRESS, KEYPRESSMASK,
 		&handle_keypress, param);
+	mlx_hook(param->mlx->window, 17, 0L << 0, &handle_quit, param);
 	mlx_loop(param->mlx->mlx);
-	//mlx_destroy_display(param->mlx->mlx);
 	free_params(param);
 	return (0);
 }

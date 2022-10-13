@@ -38,19 +38,19 @@ int	handle_keypress(int keysym, t_param *self)
 
 int	handle_moves(int keysym, t_param *self)
 {
-	if (keysym == XK_KP_Up)
+	if (keysym == XK_KP_UP)
 	{
 		self->env->camera->rota->coord[0] += M_PI / 180;
 	}
-	else if (keysym == XK_KP_Down)
+	else if (keysym == XK_KP_DOWN)
 	{
 		self->env->camera->rota->coord[0] -= M_PI / 180;
 	}
-	else if (keysym == XK_KP_Left)
+	else if (keysym == XK_KP_LEFT)
 	{
 		self->env->camera->rota->coord[1] += M_PI / 180;
 	}
-	else if (keysym == XK_KP_Right)
+	else if (keysym == XK_KP_RIGHT)
 	{
 		self->env->camera->rota->coord[1] -= M_PI / 180;
 	}
@@ -59,18 +59,18 @@ int	handle_moves(int keysym, t_param *self)
 
 int	handle_camera(int keysym, t_param *self)
 {
-	if (keysym == XK_c)
+	if (keysym == XK_C)
 	{
 		if (self->env->camera->projection == ISOMETRIC)
 			self->env->camera->projection = ORTHOGONAL;
 		else if (self->env->camera->projection == ORTHOGONAL)
 			self->env->camera->projection = ISOMETRIC;
 	}
-	else if (keysym == XK_KP_Add)
+	else if (keysym == XK_KP_ADD)
 	{
 		self->env->camera->zoom += 1;
 	}
-	else if (keysym == XK_KP_Subtract)
+	else if (keysym == XK_KP_SUBTRACT)
 	{
 		if (self->env->camera->zoom > 1)
 			self->env->camera->zoom -= 1;
@@ -80,7 +80,7 @@ int	handle_camera(int keysym, t_param *self)
 
 int	handle_exit(int keysym, t_param *self)
 {
-	if (keysym == XK_Escape)
+	if (keysym == XK_ESCAPE)
 	{
 		if (self->mlx->mlx && self->mlx->window)
 		{
@@ -89,6 +89,18 @@ int	handle_exit(int keysym, t_param *self)
 			self->mlx->window = NULL;
 			exit(0);
 		}
+	}
+	return (0);
+}
+
+int	handle_quit(t_param *self)
+{
+	if (self->mlx->mlx && self->mlx->window)
+	{
+		mlx_destroy_image(self->mlx->mlx, self->img->img);
+		mlx_destroy_window(self->mlx->mlx, self->mlx->window);
+		self->mlx->window = NULL;
+		exit(0);
 	}
 	return (0);
 }
