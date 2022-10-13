@@ -18,6 +18,7 @@ int	handle_quit(t_param *self)
 		mlx_destroy_image(self->mlx->mlx, self->img->img);
 		mlx_destroy_window(self->mlx->mlx, self->mlx->window);
 		self->mlx->window = NULL;
+		self->mlx->mlx = NULL;
 		free_params(self);
 		exit(0);
 	}

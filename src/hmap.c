@@ -18,8 +18,8 @@ t_hmap	*init_hmap(t_hmap *self, size_t width, size_t height)
 
 	self->width = width;
 	self->height = 0;
-	self->z_matrix = ft_calloc(height, sizeof (int *));
-	self->c_matrix = ft_calloc(height, sizeof (int *));
+	self->z_matrix = calloc(height, sizeof (int *));
+	self->c_matrix = calloc(height, sizeof (int *));
 	while (self->height < height)
 	{
 		z_line = ft_calloc(width, sizeof (int));
@@ -62,6 +62,7 @@ t_hmap	*new_hmap(t_hmap_dim *dimensions)
 		free(dimensions);
 		return (NULL);
 	}
+	free(dimensions);
 	return (self);
 }
 
@@ -74,6 +75,8 @@ void	*free_hmap(t_hmap *self)
 		free(self->z_matrix[self->counter->height]);
 		++(self->counter->height);
 	}
+	free(self->c_matrix);
+	free(self->z_matrix);
 	free(self->counter);
 	free(self);
 	return (NULL);

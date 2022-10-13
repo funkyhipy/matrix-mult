@@ -106,8 +106,12 @@ t_hmap	*read_map(const char *fdf_filename)
 {
 	int			fd;
 	t_hmap		*self;
+	t_hmap_dim 	*dim;
 
-	self = new_hmap(get_dimensions(fdf_filename));
+	dim = get_dimensions(fdf_filename);
+	if (!dim)
+		return (NULL);
+	self = new_hmap(dim);
 	if (!self)
 		return (NULL);
 	fd = open(fdf_filename, O_RDONLY);

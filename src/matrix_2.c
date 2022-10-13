@@ -90,7 +90,7 @@ void	*new_elem(void)
 {
 	t_vector	*e;
 
-	e = calloc(1, sizeof(t_vector));
+	e = ft_calloc(1, sizeof(t_vector));
 	if (!e)
 		return (NULL);
 	return (e);
