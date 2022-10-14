@@ -19,7 +19,10 @@ int	main(int argc, char *argv[])
 	t_param	*param;
 
 	if (argc != 2)
+	{
+		ft_printf("Error, Invalid Arguments, Number = %d\tExpected 1\n", (argc - 1));
 		return (0);
+	}
 	path = argv[1];
 	param = init_params(path);
 	if (param)
@@ -33,5 +36,7 @@ int	main(int argc, char *argv[])
 		mlx_hook(param->mlx->window, 17, 0L << 0, &handle_quit, param);
 		mlx_loop(param->mlx->mlx);
 	}
+	else
+		ft_printf("Error, Invalid Arguments, path = %s\n", path);
 	return (0);
 }
