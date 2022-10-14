@@ -16,8 +16,7 @@
 typedef enum s_projection
 {
 	ORTHOGONAL,
-	ISOMETRIC,
-	CONIC
+	ISOMETRIC
 }	t_projection;
 
 typedef struct s_camera

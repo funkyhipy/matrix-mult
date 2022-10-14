@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 #include <fdf.h>
 #include <hmap.h>
+#include <draw.h>
 
 static bool	is_valid_hex(const char *hex_str)
 {
@@ -79,7 +80,7 @@ static void	read_file_helper_elems(t_hmap *m, char *line)
 			m->c_matrix[m->counter->height][m->counter->width]
 				= str_hex_to_int(color + 1);
 		else
-			m->c_matrix[m->counter->height][m->counter->width] = -1;
+			m->c_matrix[m->counter->height][m->counter->width] = MIN_COLOR;
 		free(*(elems + m->counter->width));
 		++(m->counter->width);
 	}
