@@ -40,7 +40,11 @@ int	get_color(t_vector *color, double ratio)
 	s = (int) color->coord[0];
 	e = (int) color->coord[1];
 	if (s == e)
+	{
+		if (s < 0)
+			return (MIN_COLOR);
 		return (s);
+	}
 	red = get_light((s >> 16) & 0xFF, (e >> 16) & 0xFF, ratio);
 	green = get_light((s >> 8) & 0xFF, (e >> 8) & 0xFF, ratio);
 	blue = get_light(s & 0xFF, e & 0xFF, ratio);

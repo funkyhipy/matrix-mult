@@ -14,22 +14,22 @@
 NAME = fdf
 
 CC = gcc
-FLAGS = -Wall -Werror -Wextra -pedantic -fsanitize=address -g
+FLAGS = -Wall -Werror -Wextra #-pedantic -g3 -fsanitize=address
 
 ##################################################################
 #LIBRARIES PART OF MAKEFILE
 ##################################################################
 #MACOS LIBRARY MINILIBX
 #MINILIBX_DIRECTORY = ./mlx_macos/
-#LIBRARIES = -lmlx -lm -lft -L$(LIBFT_DIRECTORY) -L$(MINILIBX_DIRECTORY) -framework OpenGL -framework AppKit
-#MINILIBX_DIRECTORY = ./minilibx_macos/
+LIBRARIES = -lmlx -lm -lft -L$(LIBFT_DIRECTORY) -L$(MINILIBX_DIRECTORY) -framework OpenGL -framework AppKit
+MINILIBX_DIRECTORY = ./minilibx_macos/
 
 #LINUX LIBRARY MINILIBX
-LIBRARIES = -Lmlx_Linux -lmlx_Linux -L/usr/lib -Imlx_Linux -lXext -lX11 -lm -lz -lbsd -L$(LIBFT_DIRECTORY) -lft
-MINILIBX_DIRECTORY = ./mlx_linux/
+#LIBRARIES = -Lmlx_Linux -lmlx_Linux -L/usr/lib -Imlx_Linux -lXext -lX11 -lm -lz -lbsd -L$(LIBFT_DIRECTORY) -lft
+#MINILIBX_DIRECTORY = ./mlx_linux/
 
-#MINILIBX = $(MINILIBX_DIRECTORY)libmlx.a
-MINILIBX = $(MINILIBX_DIRECTORY)libmlx_Linux.a
+MINILIBX = $(MINILIBX_DIRECTORY)libmlx.a
+#MINILIBX = $(MINILIBX_DIRECTORY)libmlx_Linux.a
 MINILIBX_HEADERS = $(MINILIBX_DIRECTORY)
 
 LIBFT_DIRECTORY = ./libft/

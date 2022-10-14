@@ -80,7 +80,7 @@ static void	read_file_helper_elems(t_hmap *m, char *line)
 			m->c_matrix[m->counter->height][m->counter->width]
 				= str_hex_to_int(color + 1);
 		else
-			m->c_matrix[m->counter->height][m->counter->width] = MIN_COLOR;
+			m->c_matrix[m->counter->height][m->counter->width] = -1;
 		free(*(elems + m->counter->width));
 		++(m->counter->width);
 	}
@@ -107,7 +107,7 @@ t_hmap	*read_map(const char *fdf_filename)
 {
 	int			fd;
 	t_hmap		*self;
-	t_hmap_dim 	*dim;
+	t_hmap_dim	*dim;
 
 	dim = get_dimensions(fdf_filename);
 	if (!dim)

@@ -20,7 +20,8 @@ int	main(int argc, char *argv[])
 
 	if (argc != 2)
 	{
-		ft_printf("Error, Invalid Arguments, Number = %d\tExpected 1\n", (argc - 1));
+		ft_printf("Error, Invalid Arguments,"
+			" Number = %d\tExpected 1\n", (argc - 1));
 		return (0);
 	}
 	path = argv[1];
@@ -29,10 +30,10 @@ int	main(int argc, char *argv[])
 	{
 		draw(param->img, param->env);
 		mlx_put_image_to_window(param->mlx->mlx,
-								param->mlx->window, param->img->img, 0, 0);
+			param->mlx->window, param->img->img, 0, 0);
 		mlx_loop_hook(param->mlx->mlx, &handle_no_event, param);
 		mlx_hook(param->mlx->window, KEY_PRESS, KEYPRESSMASK,
-				 &handle_keypress, param);
+			&handle_keypress, param);
 		mlx_hook(param->mlx->window, 17, 0L << 0, &handle_quit, param);
 		mlx_loop(param->mlx->mlx);
 	}
